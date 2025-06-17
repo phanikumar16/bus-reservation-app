@@ -1,0 +1,44 @@
+{% extends 'myapp/base.html' %}
+{%load static%}
+{% block content %}
+<style>
+    body {
+        background: url('{% static "images/bus.jpeg" %}') no-repeat center center fixed;
+        
+        background-size: cover; /
+    }
+
+
+    .content-container {
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        margin: 50px auto;
+        max-width: 800px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .get-started-button {
+        padding: 10px 20px;
+        background-color: #007bff; /* Blue color, you can change it */
+        color: #fff; /* White text color */
+        text-decoration: none; /* Remove underline */
+        border-radius: 5px; /* Add rounded corners */
+        font-size: 19px; /* Adjust font size */
+        position: absolute; /* Position the button */
+        top: 50%; /* Align the top of the button to the middle of the page */
+        left: 50%; /* Align the left of the button to the middle of the page */
+        transform: translate(-50%, -50%);/* Center the button */
+        transition: background-color 0.3s ease;
+    }
+    .get-started-button:hover {
+        background-color: #32b9e6; /* Light blue color */
+        text-decoration: none; /* Remove underline on hover */
+    }
+</style>
+
+<div class="content-container">
+    <center><h1>Welcome to Bus Booking</h1></center>
+    <a href="{% url 'findbus' %}" class="get-started-button">Start Booking</a>
+</div>
+{% endblock %}
